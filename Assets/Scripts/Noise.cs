@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public static class Noise {
 
@@ -9,7 +8,6 @@ public static class Noise {
 
         System.Random prng = new System.Random(seed);
         Vector2[] octaveOffsets = new Vector2[octaves];
-
         for (int i = 0; i < octaves; i++) {
             float offsetX = prng.Next(-100000, 100000) + offset.x;
             float offsetY = prng.Next(-100000, 100000) + offset.y;
@@ -25,6 +23,7 @@ public static class Noise {
 
         float halfWidth = mapWidth / 2f;
         float halfHeight = mapHeight / 2f;
+
 
         for (int y = 0; y < mapHeight; y++) {
             for (int x = 0; x < mapWidth; x++) {
@@ -50,7 +49,6 @@ public static class Noise {
                 else if (noiseHeight < minNoiseHeight) {
                     minNoiseHeight = noiseHeight;
                 }
-
                 noiseMap[x, y] = noiseHeight;
             }
         }
@@ -65,4 +63,3 @@ public static class Noise {
     }
 
 }
-
